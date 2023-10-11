@@ -26,7 +26,7 @@ for i in range(0,len(cod1)):
             if str(pessoas[f'pessoa {i+1+j}']) == str(pessoas[f'pessoa {i+j}']):
                 del pessoas[f'pessoa {i+1+j}']
 
-        # print(comp)
+        print(comp)
     
 # print(pessoas[list(pessoas.keys())[1]])
 # print(pessoas.keys())
