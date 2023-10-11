@@ -25,7 +25,7 @@ cv2.rectangle(copy, (face[3], face[0]),(face[1], face[2]), (255,0,255), 2) #atri
 treino_img = face_recognition.face_encodings(imgelon_rgb)[0] #array([-8.60052928e-02, .... ] --> [-8.60052928e-02, .... ]
 
 
-'''-------------Treinando com uma nova imagem--------------------------------------------------'''
+'''-------------Testado com uma nova imagem---------------------------------------------------'''
 #realizar novamente os processos anteriores (menos retirando os da face até o retângulo) para a nova imagem
 img_teste = face_recognition.load_image_file('Elon-Musk2.jpg')
 img_teste = cv2.cvtColor(img_teste, cv2.COLOR_BGR2RGB)
@@ -33,3 +33,4 @@ teste_img = face_recognition.face_encodings(img_teste)[0]
 #Agora sim, comparando com a codificação da imagem de treino
 comparacao = face_recognition.compare_faces([treino_img],teste_img)
 print(comparacao) #True (significa que é a mesma pessoa)
+
