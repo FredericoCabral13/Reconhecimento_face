@@ -29,4 +29,4 @@ for i in range(0,len(cod1)):
         # print(comp)
     
 # print(pessoas[list(pessoas.keys())[1]])
-print(pessoas.keys())
+# print(pessoas.keys())
