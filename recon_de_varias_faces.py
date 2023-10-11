@@ -15,14 +15,18 @@ cod1 = face_recognition.face_encodings(img1_matiz)
 cod2 = face_recognition.face_encodings(img2_matiz)
 
 pessoas = {}
-for i in range(0,len(cod2)):
-    # cod1[i]
-    pessoas[f'pessoa {i+1}'] = cod2[i]
-    for j in range(0,len(cod1)):
-        comp = face_recognition.compare_faces([cod2[i]],cod1[j])
+for i in range(0,len(cod1)):
+    pessoas[f'pessoa {i+1}'] = cod1[i]
+    for j in range(0,len(cod2)):
+        comp = face_recognition.compare_faces([cod1[i]],cod2[j])
         if (comp == [True]):
             print(list(pessoas.keys())[i])
+        else:
+            pessoas[f'pessoa {i+1+j}'] = cod2[j]
+            if str(pessoas[f'pessoa {i+1+j}']) == str(pessoas[f'pessoa {i+j}']):
+                del pessoas[f'pessoa {i+1+j}']
+
         # print(comp)
     
 # print(pessoas[list(pessoas.keys())[1]])
-print(pessoas.keys())
+# print(pessoas.keys())
